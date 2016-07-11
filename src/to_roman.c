@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
 #include "from_roman.h"
@@ -40,11 +41,11 @@ const char* integer_to_roman_numeral(int integer)
   char* result = calloc(64, sizeof(char));
   
   int remaining = integer;
-  remaining = extract_roman_value(10, remaining, result);
-  remaining = extract_roman_value(9, remaining, result);
-  remaining = extract_roman_value(5, remaining, result);
-  remaining = extract_roman_value(4, remaining, result);
-  remaining = extract_roman_value(1, remaining, result);
+  
+  const int values[] = {10, 9, 5, 4, 1};
+  for (int i = 0; i < sizeof(values) / sizeof(*values); i++) {
+    remaining = extract_roman_value(values[i], remaining, result);
+  }
   
   return result;
 }
