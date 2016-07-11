@@ -75,6 +75,13 @@ START_TEST (should_return_4_when_given_IV)
 END_TEST
 
 
+START_TEST (should_return_6_when_given_VI)
+{
+  ck_assert_int_eq(6, roman_numeral_to_integer("VI"));
+}
+END_TEST
+
+
 Suite* check_from_roman_suite(void)
 {
   Suite* suite = suite_create("Convert Roman Numerals to Integers");
@@ -89,6 +96,7 @@ Suite* check_from_roman_suite(void)
   tcase_add_test(core, should_return_500_when_given_D);
   tcase_add_test(core, should_return_1000_when_given_M);
   tcase_add_test(core, should_return_4_when_given_IV);
+  tcase_add_test(core, should_return_6_when_given_VI);
   suite_add_tcase(suite, core);  
   return suite;
 }
