@@ -20,3 +20,12 @@ bool is_valid_roman_numeral(char* s)
   
   return true;
 }
+
+
+char* concatenate(char* a, char* b)
+{
+  char* result = malloc(strlen(a) + strlen(b) + 1);
+  strcpy(result, a);
+  strcat(result, b);
+  return result;
+}
