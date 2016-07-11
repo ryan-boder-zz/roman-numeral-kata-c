@@ -161,6 +161,13 @@ START_TEST (should_return_M_when_given_1000)
 END_TEST
 
 
+START_TEST (should_return_MMMCMXCIX_when_given_3999)
+{
+  ck_assert_str_eq("MMMCMXCIX", integer_to_roman_numeral(3999));
+}
+END_TEST
+
+
 Suite* check_to_roman_suite(void)
 {
   Suite* suite = suite_create("Convert Integers to Roman Numerals");
@@ -187,6 +194,7 @@ Suite* check_to_roman_suite(void)
   tcase_add_test(core, should_return_D_when_given_500);
   tcase_add_test(core, should_return_CM_when_given_900);
   tcase_add_test(core, should_return_M_when_given_1000);
+  tcase_add_test(core, should_return_MMMCMXCIX_when_given_3999);
   suite_add_tcase(suite, core);
   return suite;
 }
