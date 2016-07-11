@@ -94,6 +94,24 @@ START_TEST (validate_roman_numeral_should_return_false_when_D_repeats_more_than_
 END_TEST
 
 
+START_TEST (validate_integer_should_ensure_between_1_and_3999)
+{
+  ck_assert(!is_valid_integer(-100));
+  ck_assert(!is_valid_integer(-1));
+  ck_assert(!is_valid_integer(0));
+  ck_assert(is_valid_integer(1));
+  ck_assert(is_valid_integer(2));
+  ck_assert(is_valid_integer(10));
+  ck_assert(is_valid_integer(100));
+  ck_assert(is_valid_integer(1000));
+  ck_assert(is_valid_integer(3998));
+  ck_assert(is_valid_integer(3999));
+  ck_assert(!is_valid_integer(4000));
+  ck_assert(!is_valid_integer(5000));
+}
+END_TEST
+
+
 Suite* check_utility_suite(void)
 {
   Suite* suite = suite_create("Roman Numeral Utilities");
@@ -108,6 +126,7 @@ Suite* check_utility_suite(void)
   tcase_add_test(core, validate_roman_numeral_should_return_false_when_V_repeats_more_than_once);
   tcase_add_test(core, validate_roman_numeral_should_return_false_when_L_repeats_more_than_once);
   tcase_add_test(core, validate_roman_numeral_should_return_false_when_D_repeats_more_than_once);
+  tcase_add_test(core, validate_integer_should_ensure_between_1_and_3999);
   suite_add_tcase(suite, core);  
   return suite;
 }

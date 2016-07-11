@@ -39,7 +39,7 @@ int extract_roman_value(int value, int remaining, char* result)
 
 const char* integer_to_roman_numeral(int integer)
 {
-  if (integer < 1 || integer > 3999)
+  if (!is_valid_integer(integer))
     return NULL;
   
   char* result = calloc(64, sizeof(char));

@@ -35,6 +35,12 @@ bool is_valid_roman_numeral(const char* s)
 }
 
 
+bool is_valid_integer(int a)
+{
+  return a > 0 && a < 4000;
+}
+
+
 const char* concatenate(const char* a, const char* b)
 {
   char* result = malloc(strlen(a) + strlen(b) + 1);
