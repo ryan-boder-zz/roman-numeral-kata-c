@@ -4,6 +4,7 @@
 #include <check.h>
 #include "check_utility.h"
 #include "check_from_roman.h"
+#include "check_to_roman.h"
 #include "check_add.h"
 
 
@@ -11,6 +12,7 @@ int main(void)
 {
   SRunner* runner = srunner_create(check_utility_suite());
   srunner_add_suite(runner, check_from_roman_suite());
+  srunner_add_suite(runner, check_to_roman_suite());
   srunner_add_suite(runner, check_add_suite());
   
   srunner_run_all(runner, CK_NORMAL);
