@@ -28,7 +28,9 @@ bool is_valid_roman_numeral(const char* s)
     return false;
   if (NULL != strstr(s, "LL"))
     return false;
-  
+  if (NULL != strstr(s, "DD"))
+    return false;
+
   return true;
 }
 

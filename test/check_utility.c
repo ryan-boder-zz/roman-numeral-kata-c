@@ -86,6 +86,14 @@ START_TEST (validate_roman_numeral_should_return_false_when_L_repeats_more_than_
 END_TEST
 
 
+START_TEST (validate_roman_numeral_should_return_false_when_D_repeats_more_than_once)
+{
+  ck_assert(!is_valid_roman_numeral("DD"));
+  ck_assert(!is_valid_roman_numeral("DIDD"));
+}
+END_TEST
+
+
 Suite* check_utility_suite(void)
 {
   Suite* suite = suite_create("Roman Numeral Utilities");
@@ -99,6 +107,7 @@ Suite* check_utility_suite(void)
   tcase_add_test(core, validate_roman_numeral_should_return_false_when_C_repeats_more_than_thrice);
   tcase_add_test(core, validate_roman_numeral_should_return_false_when_V_repeats_more_than_once);
   tcase_add_test(core, validate_roman_numeral_should_return_false_when_L_repeats_more_than_once);
+  tcase_add_test(core, validate_roman_numeral_should_return_false_when_D_repeats_more_than_once);
   suite_add_tcase(suite, core);  
   return suite;
 }
