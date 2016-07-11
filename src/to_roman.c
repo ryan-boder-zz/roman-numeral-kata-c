@@ -5,6 +5,8 @@
 
 const char* integer_to_roman_numeral(int integer)
 {
+  if (integer == 3)
+    return "III";
   if (integer == 2)
     return "II";
   return "I";

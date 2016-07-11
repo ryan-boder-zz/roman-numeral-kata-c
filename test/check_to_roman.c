@@ -19,12 +19,20 @@ START_TEST (should_return_II_when_given_2)
 END_TEST
 
 
+START_TEST (should_return_III_when_given_3)
+{
+  ck_assert_str_eq("III", integer_to_roman_numeral(3));
+}
+END_TEST
+
+
 Suite* check_to_roman_suite(void)
 {
   Suite* suite = suite_create("Convert Integers to Roman Numerals");
   TCase* core = tcase_create("Core");
   tcase_add_test(core, should_return_I_when_given_1);
   tcase_add_test(core, should_return_II_when_given_2);
+  tcase_add_test(core, should_return_III_when_given_3);
   suite_add_tcase(suite, core);
   return suite;
 }
