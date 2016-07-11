@@ -2,6 +2,7 @@ MAIN_SOURCES = $(wildcard src/*.c)
 TEST_SOURCES = $(wildcard test/*.c)
 MAIN_OBJECTS = $(patsubst src/%.c, src/%.o, $(MAIN_SOURCES))
 TEST_OBJECTS = $(patsubst test/%.c, test/%.o, $(TEST_SOURCES))
+CFLAGS = -I src
 LD_FLAGS = -lcheck -lm -lrt -pthread
 
 
