@@ -85,6 +85,14 @@ START_TEST (should_return_MMMCMXCIX_when_given_MMM_and_CMXCIX)
 END_TEST
 
 
+START_TEST (should_return_NULL_when_result_is_4000)
+{
+  ck_assert(NULL == roman_math_add("MMMCMXCIX", "I"));
+  ck_assert(NULL == roman_math_add("I", "MMMCMXCIX"));
+}
+END_TEST
+
+
 Suite* check_add_suite(void)
 {
   Suite* suite = suite_create("Add Roman Numerals");
@@ -99,6 +107,7 @@ Suite* check_add_suite(void)
   tcase_add_test(core, should_return_XII_when_given_VII_and_V);
   tcase_add_test(core, should_return_MDCCL_when_given_CMLXXXIV_and_DCCLXVI);
   tcase_add_test(core, should_return_MMMCMXCIX_when_given_MMM_and_CMXCIX);
+  tcase_add_test(core, should_return_NULL_when_result_is_4000);
   suite_add_tcase(suite, core);  
   return suite;
 }
