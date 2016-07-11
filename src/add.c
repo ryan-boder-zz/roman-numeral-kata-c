@@ -1,16 +1,13 @@
 #include <stdlib.h>
 #include <string.h>
+#include "utility.h"
 
 
 char* roman_math_add(char* a, char* b)
 {
-  if (NULL == a || NULL == b)
+  if (!is_valid_roman_numeral(a) || !is_valid_roman_numeral(b))
     return NULL;
-  size_t a_length = strlen(a);
-  size_t b_length = strlen(b);
-  if (0 == a_length || 0 == b_length)
-    return NULL;
-  char* result = malloc(a_length + b_length + 1);
+  char* result = malloc(strlen(a) + strlen(b) + 1);
   strcpy(result, a);
   strcat(result, b);
   return result;
