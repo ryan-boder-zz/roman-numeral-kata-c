@@ -46,7 +46,7 @@ const char* integer_to_roman_numeral(int integer)
   
   int remaining = integer;
   
-  const int values[] = {900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+  const int values[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
   for (int i = 0; i < sizeof(values) / sizeof(*values); i++) {
     remaining = extract_roman_value(values[i], remaining, result);
   }
