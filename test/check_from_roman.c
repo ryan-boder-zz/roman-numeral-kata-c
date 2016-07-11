@@ -124,6 +124,13 @@ START_TEST (should_return_13_when_given_XIII)
 END_TEST
 
 
+START_TEST (should_return_14_when_given_XIV)
+{
+  ck_assert_int_eq(14, roman_numeral_to_integer("XIV"));
+}
+END_TEST
+
+
 Suite* check_from_roman_suite(void)
 {
   Suite* suite = suite_create("Convert Roman Numerals to Integers");
@@ -145,6 +152,7 @@ Suite* check_from_roman_suite(void)
   tcase_add_test(core, should_return_11_when_given_XI);
   tcase_add_test(core, should_return_12_when_given_XII);
   tcase_add_test(core, should_return_13_when_given_XIII);
-  suite_add_tcase(suite, core);  
+  tcase_add_test(core, should_return_14_when_given_XIV);
+  suite_add_tcase(suite, core);
   return suite;
 }
