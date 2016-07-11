@@ -24,6 +24,8 @@ bool is_valid_roman_numeral(const char* s)
     return false;
   if (NULL != strstr(s, "CCCC"))
     return false;
+  if (NULL != strstr(s, "VV"))
+    return false;
   
   return true;
 }
