@@ -3,7 +3,7 @@
 #include <string.h>
 
 
-bool is_valid_roman_numeral(char* s)
+bool is_valid_roman_numeral(const char* s)
 {
   if (NULL == s)
     return false;
@@ -18,11 +18,14 @@ bool is_valid_roman_numeral(char* s)
       return false;
   }
   
+  if (NULL != strstr(s, "XXXX"))
+    return false;
+  
   return true;
 }
 
 
-char* concatenate(char* a, char* b)
+const char* concatenate(const char* a, const char* b)
 {
   char* result = malloc(strlen(a) + strlen(b) + 1);
   strcpy(result, a);

@@ -46,6 +46,14 @@ START_TEST (validate_roman_numeral_should_return_true_when_input_with_all_valid_
 END_TEST
 
 
+START_TEST (validate_roman_numeral_should_return_false_when_XXX_repeats_more_than_thrice)
+{
+  ck_assert(!is_valid_roman_numeral("XXXX"));
+  ck_assert(!is_valid_roman_numeral("XXXIXXXX"));
+}
+END_TEST
+
+
 Suite* check_utility_suite(void)
 {
   Suite* suite = suite_create("Roman Numeral Utilities");
@@ -54,6 +62,7 @@ Suite* check_utility_suite(void)
   tcase_add_test(core, validate_roman_numeral_should_return_false_when_given_empty_input);
   tcase_add_test(core, validate_roman_numeral_should_return_false_when_input_with_invalid_digit);
   tcase_add_test(core, validate_roman_numeral_should_return_true_when_input_with_all_valid_digits);
+  tcase_add_test(core, validate_roman_numeral_should_return_false_when_XXX_repeats_more_than_thrice);
   suite_add_tcase(suite, core);  
   return suite;
 }
