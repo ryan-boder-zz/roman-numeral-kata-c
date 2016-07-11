@@ -33,6 +33,41 @@ START_TEST (should_return_5_when_given_V)
 END_TEST
 
 
+START_TEST (should_return_10_when_given_X)
+{
+  ck_assert_int_eq(10, roman_numeral_to_integer("X"));
+}
+END_TEST
+
+
+START_TEST (should_return_50_when_given_L)
+{
+  ck_assert_int_eq(50, roman_numeral_to_integer("L"));
+}
+END_TEST
+
+
+START_TEST (should_return_100_when_given_C)
+{
+  ck_assert_int_eq(100, roman_numeral_to_integer("C"));
+}
+END_TEST
+
+
+START_TEST (should_return_500_when_given_D)
+{
+  ck_assert_int_eq(500, roman_numeral_to_integer("D"));
+}
+END_TEST
+
+
+START_TEST (should_return_1000_when_given_M)
+{
+  ck_assert_int_eq(1000, roman_numeral_to_integer("M"));
+}
+END_TEST
+
+
 Suite* check_from_roman_suite(void)
 {
   Suite* suite = suite_create("Convert Roman Numerals to Integers");
@@ -41,6 +76,11 @@ Suite* check_from_roman_suite(void)
   tcase_add_test(core, should_return_2_when_given_II);
   tcase_add_test(core, should_return_3_when_given_III);
   tcase_add_test(core, should_return_5_when_given_V);
+  tcase_add_test(core, should_return_10_when_given_X);
+  tcase_add_test(core, should_return_50_when_given_L);
+  tcase_add_test(core, should_return_100_when_given_C);
+  tcase_add_test(core, should_return_500_when_given_D);
+  tcase_add_test(core, should_return_1000_when_given_M);  
   suite_add_tcase(suite, core);  
   return suite;
 }
