@@ -126,6 +126,13 @@ START_TEST (should_return_XC_when_given_90)
 END_TEST
 
 
+START_TEST (should_return_C_when_given_100)
+{
+  ck_assert_str_eq("C", integer_to_roman_numeral(100));
+}
+END_TEST
+
+
 Suite* check_to_roman_suite(void)
 {
   Suite* suite = suite_create("Convert Integers to Roman Numerals");
@@ -147,6 +154,7 @@ Suite* check_to_roman_suite(void)
   tcase_add_test(core, should_return_XLI_when_given_41);
   tcase_add_test(core, should_return_L_when_given_50);
   tcase_add_test(core, should_return_XC_when_given_90);
+  tcase_add_test(core, should_return_C_when_given_100);
   suite_add_tcase(suite, core);
   return suite;
 }
