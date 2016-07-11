@@ -168,6 +168,15 @@ START_TEST (should_return_MMMCMXCIX_when_given_3999)
 END_TEST
 
 
+START_TEST (should_return_NULL_when_greater_than_3999)
+{
+  ck_assert(NULL == integer_to_roman_numeral(4000));
+  ck_assert(NULL == integer_to_roman_numeral(4001));
+  ck_assert(NULL == integer_to_roman_numeral(5000));
+}
+END_TEST
+
+
 Suite* check_to_roman_suite(void)
 {
   Suite* suite = suite_create("Convert Integers to Roman Numerals");
@@ -195,6 +204,7 @@ Suite* check_to_roman_suite(void)
   tcase_add_test(core, should_return_CM_when_given_900);
   tcase_add_test(core, should_return_M_when_given_1000);
   tcase_add_test(core, should_return_MMMCMXCIX_when_given_3999);
+  tcase_add_test(core, should_return_NULL_when_greater_than_3999);
   suite_add_tcase(suite, core);
   return suite;
 }
