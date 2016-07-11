@@ -70,6 +70,13 @@ START_TEST (should_return_VII_when_given_7)
 END_TEST
 
 
+START_TEST (should_return_IX_when_given_9)
+{
+  ck_assert_str_eq("IX", integer_to_roman_numeral(9));
+}
+END_TEST
+
+
 Suite* check_to_roman_suite(void)
 {
   Suite* suite = suite_create("Convert Integers to Roman Numerals");
@@ -83,6 +90,7 @@ Suite* check_to_roman_suite(void)
   tcase_add_test(core, should_return_V_when_given_5);
   tcase_add_test(core, should_return_VI_when_given_6);
   tcase_add_test(core, should_return_VII_when_given_7);
+  tcase_add_test(core, should_return_IX_when_given_9);
   suite_add_tcase(suite, core);
   return suite;
 }

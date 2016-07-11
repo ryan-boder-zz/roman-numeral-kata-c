@@ -10,6 +10,7 @@ const char* arabic_to_roman(int arabic)
   case 1: return "I";
   case 4: return "IV";
   case 5: return "V";
+  case 9: return "IX";
   case 10: return "X";
   case 50: return "L";
   case 100: return "C";
@@ -39,6 +40,7 @@ const char* integer_to_roman_numeral(int integer)
   char* result = calloc(64, sizeof(char));
   
   int remaining = integer;
+  remaining = extract_roman_value(9, remaining, result);
   remaining = extract_roman_value(5, remaining, result);
   remaining = extract_roman_value(4, remaining, result);
   remaining = extract_roman_value(1, remaining, result);
