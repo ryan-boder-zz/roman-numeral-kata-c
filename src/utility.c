@@ -12,7 +12,7 @@ bool is_valid_roman_numeral(char* s)
   if (0 == length)
     return false;
   
-  char* valid_digits = "IVXLCD";
+  char* valid_digits = "IVXLCDM";
   for (int i = 0; i < length; i++) {
     if (NULL == strchr(valid_digits, s[i]))
       return false;

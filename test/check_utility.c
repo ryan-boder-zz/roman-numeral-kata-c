@@ -39,6 +39,7 @@ START_TEST (validate_roman_numeral_should_return_true_when_input_with_all_valid_
   ck_assert(is_valid_roman_numeral("L"));
   ck_assert(is_valid_roman_numeral("C"));
   ck_assert(is_valid_roman_numeral("D"));
+  ck_assert(is_valid_roman_numeral("M"));
   ck_assert(is_valid_roman_numeral("II"));
   ck_assert(is_valid_roman_numeral("IVXLCD"));
 }
