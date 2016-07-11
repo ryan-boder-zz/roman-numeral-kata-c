@@ -40,6 +40,7 @@ const char* integer_to_roman_numeral(int integer)
   char* result = calloc(64, sizeof(char));
   
   int remaining = integer;
+  remaining = extract_roman_value(10, remaining, result);
   remaining = extract_roman_value(9, remaining, result);
   remaining = extract_roman_value(5, remaining, result);
   remaining = extract_roman_value(4, remaining, result);
