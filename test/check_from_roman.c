@@ -152,6 +152,13 @@ START_TEST (should_return_3999_when_given_MMMCMXCIX)
 END_TEST
 
 
+START_TEST (should_return_3998_when_given_MMMCMXCVIII)
+{
+  ck_assert_int_eq(3998, roman_numeral_to_integer("MMMCMXCVIII"));
+}
+END_TEST
+
+
 Suite* check_from_roman_suite(void)
 {
   Suite* suite = suite_create("Convert Roman Numerals to Integers");
@@ -177,6 +184,7 @@ Suite* check_from_roman_suite(void)
   tcase_add_test(core, should_return_15_when_given_XV);
   tcase_add_test(core, should_return_99_when_given_XCIX);
   tcase_add_test(core, should_return_3999_when_given_MMMCMXCIX);
+  tcase_add_test(core, should_return_3998_when_given_MMMCMXCVIII);
   suite_add_tcase(suite, core);
   return suite;
 }
