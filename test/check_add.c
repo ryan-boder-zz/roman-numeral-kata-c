@@ -61,6 +61,14 @@ START_TEST (should_return_V_when_given_II_and_III)
 END_TEST
 
 
+START_TEST (should_return_XII_when_given_VII_and_V)
+{
+  ck_assert_str_eq("XII", roman_math_add("VII", "V"));
+  ck_assert_str_eq("XII", roman_math_add("V", "VII"));
+}
+END_TEST
+
+
 Suite* check_add_suite(void)
 {
   Suite* suite = suite_create("Add Roman Numerals");
@@ -72,6 +80,7 @@ Suite* check_add_suite(void)
   tcase_add_test(core, should_return_III_when_given_I_and_II);
   tcase_add_test(core, should_return_IV_when_given_II_and_II);
   tcase_add_test(core, should_return_V_when_given_II_and_III);
+  tcase_add_test(core, should_return_XII_when_given_VII_and_V);
   suite_add_tcase(suite, core);  
   return suite;
 }
