@@ -8,6 +8,7 @@ const char* arabic_to_roman(int arabic)
 {
   switch (arabic) {
   case 1: return "I";
+  case 4: return "IV";
   case 5: return "V";
   case 10: return "X";
   case 50: return "L";
@@ -31,6 +32,11 @@ const char* integer_to_roman_numeral(int integer)
   while (remaining >= 5) {
     strcat(result, arabic_to_roman(5));
     remaining -= 5;
+  }
+  
+  while (remaining >= 4) {
+    strcat(result, arabic_to_roman(4));
+    remaining -= 4;
   }
   
   while (remaining >= 1) {

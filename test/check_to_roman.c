@@ -42,6 +42,13 @@ START_TEST (should_return_III_when_given_3)
 END_TEST
 
 
+START_TEST (should_return_IV_when_given_4)
+{
+  ck_assert_str_eq("IV", integer_to_roman_numeral(4));
+}
+END_TEST
+
+
 START_TEST (should_return_V_when_given_5)
 {
   ck_assert_str_eq("V", integer_to_roman_numeral(5));
@@ -58,6 +65,7 @@ Suite* check_to_roman_suite(void)
   tcase_add_test(core, should_return_I_when_given_1);
   tcase_add_test(core, should_return_II_when_given_2);
   tcase_add_test(core, should_return_III_when_given_3);
+  tcase_add_test(core, should_return_IV_when_given_4);
   tcase_add_test(core, should_return_V_when_given_5);
   suite_add_tcase(suite, core);
   return suite;
