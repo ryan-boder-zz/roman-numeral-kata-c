@@ -20,29 +20,28 @@ const char* arabic_to_roman(int arabic)
 }
 
 
+// Extracts the given value as many times as possible and returns the remainder
+int extract_roman_value(int value, int remaining, char* result)
+{
+  while (remaining >= value) {
+    strcat(result, arabic_to_roman(value));
+    remaining -= value;
+  }
+  return remaining;
+}
+
+
 const char* integer_to_roman_numeral(int integer)
 {
   if (0 >= integer)
     return NULL;
   
   char* result = calloc(64, sizeof(char));
-
-  int remaining = integer;  
   
-  while (remaining >= 5) {
-    strcat(result, arabic_to_roman(5));
-    remaining -= 5;
-  }
-  
-  while (remaining >= 4) {
-    strcat(result, arabic_to_roman(4));
-    remaining -= 4;
-  }
-  
-  while (remaining >= 1) {
-    strcat(result, arabic_to_roman(1));
-    remaining -= 1;
-  }
+  int remaining = integer;
+  remaining = extract_roman_value(5, remaining, result);
+  remaining = extract_roman_value(4, remaining, result);
+  remaining = extract_roman_value(1, remaining, result);
   
   return result;
 }
