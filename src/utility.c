@@ -18,6 +18,8 @@ bool is_valid_roman_numeral(const char* s)
       return false;
   }
   
+  if (NULL != strstr(s, "IIII"))
+    return false;
   if (NULL != strstr(s, "XXXX"))
     return false;
   
