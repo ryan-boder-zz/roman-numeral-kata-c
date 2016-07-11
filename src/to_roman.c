@@ -19,6 +19,7 @@ const char* arabic_to_roman(int arabic)
   case 100: return "C";
   case 400: return "CD";
   case 500: return "D";
+  case 900: return "CM";
   case 1000: return "M";
   default: return NULL;
   }
@@ -45,7 +46,7 @@ const char* integer_to_roman_numeral(int integer)
   
   int remaining = integer;
   
-  const int values[] = {500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+  const int values[] = {900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
   for (int i = 0; i < sizeof(values) / sizeof(*values); i++) {
     remaining = extract_roman_value(values[i], remaining, result);
   }

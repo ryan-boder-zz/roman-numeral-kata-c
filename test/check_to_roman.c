@@ -147,6 +147,13 @@ START_TEST (should_return_D_when_given_500)
 END_TEST
 
 
+START_TEST (should_return_CM_when_given_900)
+{
+  ck_assert_str_eq("CM", integer_to_roman_numeral(900));
+}
+END_TEST
+
+
 Suite* check_to_roman_suite(void)
 {
   Suite* suite = suite_create("Convert Integers to Roman Numerals");
@@ -171,6 +178,7 @@ Suite* check_to_roman_suite(void)
   tcase_add_test(core, should_return_C_when_given_100);
   tcase_add_test(core, should_return_CD_when_given_400);
   tcase_add_test(core, should_return_D_when_given_500);
+  tcase_add_test(core, should_return_CM_when_given_900);
   suite_add_tcase(suite, core);
   return suite;
 }
