@@ -91,6 +91,13 @@ START_TEST (should_return_XIV_when_given_14)
 END_TEST
 
 
+START_TEST (should_return_XIX_when_given_19)
+{
+  ck_assert_str_eq("XIX", integer_to_roman_numeral(19));
+}
+END_TEST
+
+
 Suite* check_to_roman_suite(void)
 {
   Suite* suite = suite_create("Convert Integers to Roman Numerals");
@@ -107,6 +114,7 @@ Suite* check_to_roman_suite(void)
   tcase_add_test(core, should_return_IX_when_given_9);
   tcase_add_test(core, should_return_X_when_given_10);
   tcase_add_test(core, should_return_XIV_when_given_14);
+  tcase_add_test(core, should_return_XIX_when_given_19);
   suite_add_tcase(suite, core);
   return suite;
 }
