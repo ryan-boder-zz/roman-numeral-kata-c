@@ -77,6 +77,14 @@ START_TEST (should_return_MDCCL_when_given_CMLXXXIV_and_DCCLXVI)
 END_TEST
 
 
+START_TEST (should_return_MMMCMXCIX_when_given_MMM_and_CMXCIX)
+{
+  ck_assert_str_eq("MMMCMXCIX", roman_math_add("MMM", "CMXCIX"));
+  ck_assert_str_eq("MMMCMXCIX", roman_math_add("CMXCIX", "MMM"));
+}
+END_TEST
+
+
 Suite* check_add_suite(void)
 {
   Suite* suite = suite_create("Add Roman Numerals");
@@ -90,6 +98,7 @@ Suite* check_add_suite(void)
   tcase_add_test(core, should_return_V_when_given_II_and_III);
   tcase_add_test(core, should_return_XII_when_given_VII_and_V);
   tcase_add_test(core, should_return_MDCCL_when_given_CMLXXXIV_and_DCCLXVI);
+  tcase_add_test(core, should_return_MMMCMXCIX_when_given_MMM_and_CMXCIX);
   suite_add_tcase(suite, core);  
   return suite;
 }
