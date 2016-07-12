@@ -38,6 +38,13 @@ START_TEST (should_return_I_when_given_II_and_I)
 END_TEST
 
 
+START_TEST (should_return_II_when_given_IX_and_VII)
+{
+  ck_assert_str_eq("II", roman_math_subtract("IX", "VII"));
+}
+END_TEST
+
+
 Suite* check_subtract_suite(void)
 {
   Suite* suite = suite_create("Subtract Roman Numerals");
@@ -46,6 +53,7 @@ Suite* check_subtract_suite(void)
   tcase_add_test(core, should_return_NULL_when_given_empty_input);
   tcase_add_test(core, should_return_NULL_when_given_input_with_invalid_digit);
   tcase_add_test(core, should_return_I_when_given_II_and_I);
+  tcase_add_test(core, should_return_II_when_given_IX_and_VII);
   suite_add_tcase(suite, core);  
   return suite;
 }
