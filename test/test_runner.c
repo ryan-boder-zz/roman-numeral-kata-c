@@ -9,7 +9,7 @@
 #include "check_subtract.h"
 
 
-int main(void)
+int main(int argc, char** argv)
 {
   SRunner* runner = srunner_create(check_utility_suite());
   srunner_add_suite(runner, check_from_roman_suite());
@@ -17,7 +17,7 @@ int main(void)
   srunner_add_suite(runner, check_add_suite());
   srunner_add_suite(runner, check_subtract_suite());
 
-  srunner_run_all(runner, CK_NORMAL);
+  srunner_run_all(runner, (argc > 1) ? CK_VERBOSE : CK_NORMAL);
   int number_failed = srunner_ntests_failed(runner);
   srunner_free(runner);
   return (number_failed == 0) ? EXIT_SUCCESS : EXIT_FAILURE;

@@ -13,7 +13,11 @@ testrunner: $(MAIN_OBJECTS) $(TEST_OBJECTS)
 	$(CC) -o bin/$@ $^ $(LD_FLAGS)
 
 test: testrunner
+	@echo "For test details: make testverbose"
 	bin/$^
+
+testverbose: testrunner
+	bin/$^ verbose
 
 clean:
 	rm -Rf bin src/*.o test/*.o
