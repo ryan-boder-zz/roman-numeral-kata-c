@@ -7,6 +7,7 @@
 #include "check_to_roman.h"
 #include "check_add.h"
 #include "check_subtract.h"
+#include "check_all_conversions.h"
 
 
 int main(int argc, char** argv)
@@ -16,6 +17,7 @@ int main(int argc, char** argv)
   srunner_add_suite(runner, check_to_roman_suite());
   srunner_add_suite(runner, check_add_suite());
   srunner_add_suite(runner, check_subtract_suite());
+  srunner_add_suite(runner, check_all_conversions_suite());
 
   srunner_run_all(runner, (argc > 1) ? CK_VERBOSE : CK_NORMAL);
   int number_failed = srunner_ntests_failed(runner);
