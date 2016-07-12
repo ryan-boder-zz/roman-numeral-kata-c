@@ -24,7 +24,7 @@ int roman_numeral_to_integer(const char* roman)
   int result = 0;
   int length = strlen(roman);
   for (int i = 0; i < length; i++) {
-    if (i < length - 1 && digit_to_int(roman[i]) < digit_to_int(roman[i + 1])) {
+    if (i + 1 < length && digit_to_int(roman[i]) < digit_to_int(roman[i + 1])) {
       result -= digit_to_int(roman[i]);
     } else {
       result += digit_to_int(roman[i]);
