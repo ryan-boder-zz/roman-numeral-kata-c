@@ -45,6 +45,13 @@ START_TEST (should_return_II_when_given_IX_and_VII)
 END_TEST
 
 
+START_TEST (should_return_MMLXVII_when_given_MMMCCLVI_and_MCLXXXIX)
+{
+  ck_assert_str_eq("MMLXVII", roman_math_subtract("MMMCCLVI", "MCLXXXIX"));
+}
+END_TEST
+
+
 Suite* check_subtract_suite(void)
 {
   Suite* suite = suite_create("Subtract Roman Numerals");
@@ -54,6 +61,7 @@ Suite* check_subtract_suite(void)
   tcase_add_test(core, should_return_NULL_when_given_input_with_invalid_digit);
   tcase_add_test(core, should_return_I_when_given_II_and_I);
   tcase_add_test(core, should_return_II_when_given_IX_and_VII);
+  tcase_add_test(core, should_return_MMLXVII_when_given_MMMCCLVI_and_MCLXXXIX);
   suite_add_tcase(suite, core);  
   return suite;
 }
