@@ -3,6 +3,7 @@
 #include <math.h>
 #include <check.h>
 #include "roman_math.h"
+#include "test_utility.h"
 
 
 START_TEST (should_return_NULL_when_given_NULL_input)
@@ -33,54 +34,54 @@ END_TEST
 
 START_TEST (should_return_II_when_given_I_and_I)
 {
-  ck_assert_str_eq("II", roman_math_add("I", "I"));
+  mem_free_assert_str_eq("II", roman_math_add("I", "I"));
 }
 END_TEST
 
 
 START_TEST (should_return_III_when_given_I_and_II)
 {
-  ck_assert_str_eq("III", roman_math_add("I", "II"));
-  ck_assert_str_eq("III", roman_math_add("II", "I"));
+  mem_free_assert_str_eq("III", roman_math_add("I", "II"));
+  mem_free_assert_str_eq("III", roman_math_add("II", "I"));
 }
 END_TEST
 
 
 START_TEST (should_return_IV_when_given_II_and_II)
 {
-  ck_assert_str_eq("IV", roman_math_add("II", "II"));
+  mem_free_assert_str_eq("IV", roman_math_add("II", "II"));
 }
 END_TEST
 
 
 START_TEST (should_return_V_when_given_II_and_III)
 {
-  ck_assert_str_eq("V", roman_math_add("II", "III"));
-  ck_assert_str_eq("V", roman_math_add("III", "II"));
+  mem_free_assert_str_eq("V", roman_math_add("II", "III"));
+  mem_free_assert_str_eq("V", roman_math_add("III", "II"));
 }
 END_TEST
 
 
 START_TEST (should_return_XII_when_given_VII_and_V)
 {
-  ck_assert_str_eq("XII", roman_math_add("VII", "V"));
-  ck_assert_str_eq("XII", roman_math_add("V", "VII"));
+  mem_free_assert_str_eq("XII", roman_math_add("VII", "V"));
+  mem_free_assert_str_eq("XII", roman_math_add("V", "VII"));
 }
 END_TEST
 
 
 START_TEST (should_return_MDCCL_when_given_CMLXXXIV_and_DCCLXVI)
 {
-  ck_assert_str_eq("MDCCL", roman_math_add("CMLXXXIV", "DCCLXVI"));
-  ck_assert_str_eq("MDCCL", roman_math_add("DCCLXVI", "CMLXXXIV"));
+  mem_free_assert_str_eq("MDCCL", roman_math_add("CMLXXXIV", "DCCLXVI"));
+  mem_free_assert_str_eq("MDCCL", roman_math_add("DCCLXVI", "CMLXXXIV"));
 }
 END_TEST
 
 
 START_TEST (should_return_MMMCMXCIX_when_given_MMM_and_CMXCIX)
 {
-  ck_assert_str_eq("MMMCMXCIX", roman_math_add("MMM", "CMXCIX"));
-  ck_assert_str_eq("MMMCMXCIX", roman_math_add("CMXCIX", "MMM"));
+  mem_free_assert_str_eq("MMMCMXCIX", roman_math_add("MMM", "CMXCIX"));
+  mem_free_assert_str_eq("MMMCMXCIX", roman_math_add("CMXCIX", "MMM"));
 }
 END_TEST
 

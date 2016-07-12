@@ -5,6 +5,7 @@
 #include <check.h>
 #include "from_roman.h"
 #include "to_roman.h"
+#include "test_utility.h"
 
 
 typedef void (*test_function)(const char*,const char*);
@@ -18,7 +19,7 @@ void test_from_roman(const char* integer, const char* roman)
 
 void test_to_roman(const char* integer, const char* roman)
 {
-  ck_assert_str_eq(roman, integer_to_roman_numeral(atoi(integer)));
+  mem_free_assert_str_eq(roman, integer_to_roman_numeral(atoi(integer)));
 }
 
 

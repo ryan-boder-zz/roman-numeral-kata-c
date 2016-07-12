@@ -3,6 +3,7 @@
 #include <math.h>
 #include <check.h>
 #include "roman_math.h"
+#include "test_utility.h"
 
 
 START_TEST (should_return_NULL_when_given_NULL_input)
@@ -33,21 +34,21 @@ END_TEST
 
 START_TEST (should_return_I_when_given_II_and_I)
 {
-  ck_assert_str_eq("I", roman_math_subtract("II", "I"));
+  mem_free_assert_str_eq("I", roman_math_subtract("II", "I"));
 }
 END_TEST
 
 
 START_TEST (should_return_II_when_given_IX_and_VII)
 {
-  ck_assert_str_eq("II", roman_math_subtract("IX", "VII"));
+  mem_free_assert_str_eq("II", roman_math_subtract("IX", "VII"));
 }
 END_TEST
 
 
 START_TEST (should_return_MMLXVII_when_given_MMMCCLVI_and_MCLXXXIX)
 {
-  ck_assert_str_eq("MMLXVII", roman_math_subtract("MMMCCLVI", "MCLXXXIX"));
+  mem_free_assert_str_eq("MMLXVII", roman_math_subtract("MMMCCLVI", "MCLXXXIX"));
 }
 END_TEST
 

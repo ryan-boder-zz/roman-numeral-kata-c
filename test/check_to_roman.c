@@ -3,6 +3,7 @@
 #include <math.h>
 #include <check.h>
 #include "to_roman.h"
+#include "test_utility.h"
 
 
 START_TEST (should_return_NULL_when_given_0)
@@ -23,147 +24,147 @@ END_TEST
 
 START_TEST (should_return_I_when_given_1)
 {
-  ck_assert_str_eq("I", integer_to_roman_numeral(1));
+  mem_free_assert_str_eq("I", integer_to_roman_numeral(1));
 }
 END_TEST
 
 
 START_TEST (should_return_II_when_given_2)
 {
-  ck_assert_str_eq("II", integer_to_roman_numeral(2));
+  mem_free_assert_str_eq("II", integer_to_roman_numeral(2));
 }
 END_TEST
 
 
 START_TEST (should_return_III_when_given_3)
 {
-  ck_assert_str_eq("III", integer_to_roman_numeral(3));
+  mem_free_assert_str_eq("III", integer_to_roman_numeral(3));
 }
 END_TEST
 
 
 START_TEST (should_return_IV_when_given_4)
 {
-  ck_assert_str_eq("IV", integer_to_roman_numeral(4));
+  mem_free_assert_str_eq("IV", integer_to_roman_numeral(4));
 }
 END_TEST
 
 
 START_TEST (should_return_V_when_given_5)
 {
-  ck_assert_str_eq("V", integer_to_roman_numeral(5));
+  mem_free_assert_str_eq("V", integer_to_roman_numeral(5));
 }
 END_TEST
 
 
 START_TEST (should_return_VI_when_given_6)
 {
-  ck_assert_str_eq("VI", integer_to_roman_numeral(6));
+  mem_free_assert_str_eq("VI", integer_to_roman_numeral(6));
 }
 END_TEST
 
 
 START_TEST (should_return_VII_when_given_7)
 {
-  ck_assert_str_eq("VII", integer_to_roman_numeral(7));
+  mem_free_assert_str_eq("VII", integer_to_roman_numeral(7));
 }
 END_TEST
 
 
 START_TEST (should_return_IX_when_given_9)
 {
-  ck_assert_str_eq("IX", integer_to_roman_numeral(9));
+  mem_free_assert_str_eq("IX", integer_to_roman_numeral(9));
 }
 END_TEST
 
 
 START_TEST (should_return_X_when_given_10)
 {
-  ck_assert_str_eq("X", integer_to_roman_numeral(10));
+  mem_free_assert_str_eq("X", integer_to_roman_numeral(10));
 }
 END_TEST
 
 
 START_TEST (should_return_XIV_when_given_14)
 {
-  ck_assert_str_eq("XIV", integer_to_roman_numeral(14));
+  mem_free_assert_str_eq("XIV", integer_to_roman_numeral(14));
 }
 END_TEST
 
 
 START_TEST (should_return_XIX_when_given_19)
 {
-  ck_assert_str_eq("XIX", integer_to_roman_numeral(19));
+  mem_free_assert_str_eq("XIX", integer_to_roman_numeral(19));
 }
 END_TEST
 
 
 START_TEST (should_return_XL_when_given_40)
 {
-  ck_assert_str_eq("XL", integer_to_roman_numeral(40));
+  mem_free_assert_str_eq("XL", integer_to_roman_numeral(40));
 }
 END_TEST
 
 
 START_TEST (should_return_XLI_when_given_41)
 {
-  ck_assert_str_eq("XLI", integer_to_roman_numeral(41));
+  mem_free_assert_str_eq("XLI", integer_to_roman_numeral(41));
 }
 END_TEST
 
 
 START_TEST (should_return_L_when_given_50)
 {
-  ck_assert_str_eq("L", integer_to_roman_numeral(50));
+  mem_free_assert_str_eq("L", integer_to_roman_numeral(50));
 }
 END_TEST
 
 
 START_TEST (should_return_XC_when_given_90)
 {
-  ck_assert_str_eq("XC", integer_to_roman_numeral(90));
+  mem_free_assert_str_eq("XC", integer_to_roman_numeral(90));
 }
 END_TEST
 
 
 START_TEST (should_return_C_when_given_100)
 {
-  ck_assert_str_eq("C", integer_to_roman_numeral(100));
+  mem_free_assert_str_eq("C", integer_to_roman_numeral(100));
 }
 END_TEST
 
 
 START_TEST (should_return_CD_when_given_400)
 {
-  ck_assert_str_eq("CD", integer_to_roman_numeral(400));
+  mem_free_assert_str_eq("CD", integer_to_roman_numeral(400));
 }
 END_TEST
 
 
 START_TEST (should_return_D_when_given_500)
 {
-  ck_assert_str_eq("D", integer_to_roman_numeral(500));
+  mem_free_assert_str_eq("D", integer_to_roman_numeral(500));
 }
 END_TEST
 
 
 START_TEST (should_return_CM_when_given_900)
 {
-  ck_assert_str_eq("CM", integer_to_roman_numeral(900));
+  mem_free_assert_str_eq("CM", integer_to_roman_numeral(900));
 }
 END_TEST
 
 
 START_TEST (should_return_M_when_given_1000)
 {
-  ck_assert_str_eq("M", integer_to_roman_numeral(1000));
+  mem_free_assert_str_eq("M", integer_to_roman_numeral(1000));
 }
 END_TEST
 
 
 START_TEST (should_return_MMMCMXCIX_when_given_3999)
 {
-  ck_assert_str_eq("MMMCMXCIX", integer_to_roman_numeral(3999));
+  mem_free_assert_str_eq("MMMCMXCIX", integer_to_roman_numeral(3999));
 }
 END_TEST
 
