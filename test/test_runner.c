@@ -14,7 +14,8 @@ int main(void)
   srunner_add_suite(runner, check_from_roman_suite());
   srunner_add_suite(runner, check_to_roman_suite());
   srunner_add_suite(runner, check_add_suite());
-  
+  srunner_add_suite(runner, check_subtract_suite());
+
   srunner_run_all(runner, CK_NORMAL);
   int number_failed = srunner_ntests_failed(runner);
   srunner_free(runner);
