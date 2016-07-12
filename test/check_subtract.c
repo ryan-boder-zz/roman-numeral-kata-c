@@ -61,6 +61,15 @@ START_TEST (should_return_NULL_when_result_is_0)
 END_TEST
 
 
+START_TEST (should_return_NULL_when_result_is_negative)
+{
+  ck_assert(NULL == roman_math_subtract("I", "II"));
+  ck_assert(NULL == roman_math_subtract("V", "X"));
+  ck_assert(NULL == roman_math_subtract("XX", "M"));
+}
+END_TEST
+
+
 Suite* check_subtract_suite(void)
 {
   Suite* suite = suite_create("Subtract Roman Numerals");
@@ -72,6 +81,7 @@ Suite* check_subtract_suite(void)
   tcase_add_test(core, should_return_II_when_given_IX_and_VII);
   tcase_add_test(core, should_return_MMLXVII_when_given_MMMCCLVI_and_MCLXXXIX);
   tcase_add_test(core, should_return_NULL_when_result_is_0);
+  tcase_add_test(core, should_return_NULL_when_result_is_negative);
   suite_add_tcase(suite, core);  
   return suite;
 }

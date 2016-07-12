@@ -6,6 +6,7 @@
 #include "check_from_roman.h"
 #include "check_to_roman.h"
 #include "check_add.h"
+#include "check_subtract.h"
 
 
 int main(void)
