@@ -20,6 +20,7 @@ testverbose: testrunner
 	bin/$^ verbose
 
 libromanmath.a: $(MAIN_OBJECTS)
+	@mkdir -p bin
 	ar rcs bin/$@ $^
 
 clean:
