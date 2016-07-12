@@ -16,3 +16,16 @@ const char* roman_math_add(const char* a, const char* b)
 
   return integer_to_roman_numeral(result);
 }
+
+
+const char* roman_math_subtract(const char* a, const char* b)
+{
+  if (!is_valid_roman_numeral(a) || !is_valid_roman_numeral(b))
+    return NULL;
+
+  int lhs = roman_numeral_to_integer(a);
+  int rhs = roman_numeral_to_integer(b);
+  int result = lhs - rhs;
+
+  return integer_to_roman_numeral(result);
+}
