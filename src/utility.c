@@ -9,7 +9,7 @@ bool is_valid_roman_numeral(const char* s)
     return false;
   
   size_t length = strlen(s);
-  if (0 == length)
+  if (0 == length || length > 14)
     return false;
   
   char* valid_digits = "IVXLCDM";

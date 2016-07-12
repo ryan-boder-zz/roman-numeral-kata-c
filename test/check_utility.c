@@ -19,6 +19,13 @@ START_TEST (validate_roman_numeral_should_return_false_when_given_empty_input)
 END_TEST
 
 
+START_TEST (validate_roman_numeral_should_return_false_when_longer_than_max_length)
+{
+  ck_assert(!is_valid_roman_numeral("MMDCCCLXXXVIIIX"));
+}
+END_TEST
+
+
 START_TEST (validate_roman_numeral_should_return_false_when_input_with_invalid_digit)
 {
   ck_assert(!is_valid_roman_numeral("A"));
@@ -118,6 +125,7 @@ Suite* check_utility_suite(void)
   TCase* core = tcase_create("Core");
   tcase_add_test(core, validate_roman_numeral_should_return_false_when_given_NULL_input);
   tcase_add_test(core, validate_roman_numeral_should_return_false_when_given_empty_input);
+  tcase_add_test(core, validate_roman_numeral_should_return_false_when_longer_than_max_length);
   tcase_add_test(core, validate_roman_numeral_should_return_false_when_input_with_invalid_digit);
   tcase_add_test(core, validate_roman_numeral_should_return_true_when_input_with_all_valid_digits);
   tcase_add_test(core, validate_roman_numeral_should_return_false_when_I_repeats_more_than_thrice);
