@@ -6,7 +6,7 @@ CFLAGS = -std=c99 -I src
 LD_FLAGS = -lcheck -lm -lrt -pthread
 
 
-all: test
+all: test libromanmath.a
 
 testrunner: $(MAIN_OBJECTS) $(TEST_OBJECTS)
 	@mkdir -p bin
@@ -18,6 +18,9 @@ test: testrunner
 
 testverbose: testrunner
 	bin/$^ verbose
+
+libromanmath.a: $(MAIN_OBJECTS)
+	ar rcs bin/$@ $^
 
 clean:
 	rm -Rf bin src/*.o test/*.o
